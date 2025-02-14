@@ -10,8 +10,8 @@ export default function ApologyPage() {
     >
       <div className="w-full max-w-3xl px-4 md:px-6 space-y-4 md:space-y-6">
         <p className="text-xl md:text-2xl text-[#FF9494] text-left">Dear Maisie,</p>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl text-[#FF9494] leading-tight">I&apos;m sorry it took me this long to ask u...</h1>
-        <p className="text-lg md:text-xl lg:text-2xl text-[#FF9494] leading-relaxed">But I wanted to make something special for u</p>
+        <h1 className="text-xl md:text-2xl lg:text-3xl text-[#FF9494] leading-tight">I&apos;m sorry it took me bit long to ask..</h1>
+        <p className="text-2xl md:text-3xl lg:text-4xl text-[#FF9494] leading-relaxed">But I wanted to make something special for u</p>
       </div>
       <video
         src="/theodore-chipmunk-sad-walk.mp4"

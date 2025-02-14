@@ -10,23 +10,29 @@ import Confetti from "react-confetti"
 const monomakh = Monomakh({ subsets: ["latin"], weight: "400" })
 
 const funnyMessages = [
-  "Nice try! But you can't escape love 😘",
+  "Nice try! But you can't escape it",
   "Oops! The button is playing hard to get 💝",
   "Catch me if you can! 🏃‍♂️",
   "Love is inevitable 💕",
   "You're making this harder than it needs to be 😅",
-  "The heart wants what it wants! 💖",
   "Running away won't help! 🎯",
   "Resistance is futile! 🌹"
 ]
 
 export default function ValentineQuestionPage() {
-  const [noButtonPosition, setNoButtonPosition] = useState({ x: null, y: null })
+  const [noButtonPosition, setNoButtonPosition] = useState<{ x: number | null; y: number | null }>({ x: null, y: null })
   const [yesButtonSize, setYesButtonSize] = useState(1)
   const [wiggle, setWiggle] = useState(false)
   const [showConfetti, setShowConfetti] = useState(false)
   const { width, height } = useWindowSize()
   const { toast } = useToast()
+
+  useEffect(() => {
+    setNoButtonPosition({
+      x: window.innerWidth * 0.75,
+      y: window.innerHeight * 0.8
+    })
+  }, [])
 
   const moveNoButton = useCallback(() => {
     const x = Math.random() * (window.innerWidth - 100)
@@ -91,7 +97,7 @@ export default function ValentineQuestionPage() {
         </Link>
         <button
           style={{
-            position: noButtonPosition.x !== null ? "fixed" : "relative",
+            position: noButtonPosition.x !== null ? "fixed" : "static",
             left: noButtonPosition.x !== null ? `${noButtonPosition.x}px` : "auto",
             top: noButtonPosition.y !== null ? `${noButtonPosition.y}px` : "auto",
             transition: "all 0.2s ease",
